@@ -49,7 +49,7 @@ public class CsvReaderTest {
         String filePath = "path/to/nonexistentfile.csv";
         CsvReader csvReader = new CsvReader(filePath);
         RuntimeException thrown = assertThrows(RuntimeException.class, csvReader::loadPlayers);
-        assertEquals("Error reading CSV file", thrown.getMessage());
+        assertEquals("Error reading CSV file path/to/nonexistentfile.csv", thrown.getMessage());
     }
 
 }
