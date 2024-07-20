@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: Players
+
+  datasource:
+    url: jdbc:h2:file:./data/playersdb;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  h2:
+    console:
+      enabled: true
+
+data:
+  players:
+    csv: src/main/resources/data/player.csv
+#    csv: src/main/resources/data/player_500K.csv
+#    csv: src/main/resources/data/player_1M.csv
+
+#
+playerHandler:
+  isDataBase: true # otherwise in memory handler will be used
+  reloadDatabaseOnStart: true
